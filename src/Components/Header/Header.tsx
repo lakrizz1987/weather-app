@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./Header.module.css";
-import getCurrentWeatherByLat from "../../services/services"
+
 
 const Header: React.FC = () => {
     return (
         <header className={styles['site-header']}>
-            <h1 onClick={getCurrentWeatherByLat}>WeatherApp</h1>
+            <h1>WeatherApp</h1>
             <section className="site-search-container">
                 <form method="post">
                     <input className={styles.searchInput} type="text" id="search" placeholder="Search a town..." />

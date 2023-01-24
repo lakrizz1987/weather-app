@@ -10,5 +10,7 @@ body{
 
 :root{
     --gradientColor: linear-gradient(to right, rgb(17, 17, 211), rgb(47, 223, 223));
+    --gradientColorLight: linear-gradient(to right, rgb(62, 143, 235), rgb(47, 223, 223));
     --textColor: rgb(53, 52, 52);
 }
+
