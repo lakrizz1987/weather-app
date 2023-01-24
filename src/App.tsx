@@ -13,17 +13,10 @@ navigator.geolocation.getCurrentPosition(position => {
   lon = position.coords.longitude;
 });
 
-type Props = {
-  town: string,
-  temp: string,
-  icon: string,
-  maxTemp: string,
-  minTemp: string,
-  wind: string
-}
+
 
 function App() {
-  const [town, setTown] = useState<Props>({
+  const [town, setTown] = useState({
     town: '---',
     temp: '---',
     icon: '---',
@@ -45,13 +38,19 @@ function App() {
         }
         setTown(currentTown)
       })
+      .catch(err => console.log(err))
 
   }, [])
 
   return (
     <div className="App">
       <Header />
-      <Home town={town!.town} temp={town!.temp} icon={town!.icon} maxTemp={town!.maxTemp} minTemp={town!.minTemp} wind={town!.wind} />
+      <Home town={town.town} 
+      temp={town.temp} 
+      icon={town.icon} 
+      maxTemp={town.maxTemp} 
+      minTemp={town.minTemp} 
+      wind={town.wind} />
     </div>
   );
 }

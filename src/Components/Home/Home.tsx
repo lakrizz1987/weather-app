@@ -12,7 +12,12 @@ type Props = {
 
 
 const Home: React.FC<Props> = (props) => {
-    const imgURL = `http://openweathermap.org/img/wn/${props.icon}@2x.png`;
+    
+    let imgURL = '';
+    if(props.icon !== '---'){
+         imgURL = `http://openweathermap.org/img/wn/${props.icon}@2x.png`;
+    }
+    
 
     return (
         <section className={styles['data-container']}>
