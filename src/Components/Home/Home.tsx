@@ -1,23 +1,19 @@
 import React from "react";
 import styles from "./Home.module.css";
-
-type Props = {
-    town: string,
-    temp: string,
-    icon: string,
-    maxTemp: string,
-    minTemp: string,
-    wind: string
-}
+import { useSelector} from 'react-redux';
 
 
-const Home: React.FC<Props> = (props) => {
+
+
+
+const Home: React.FC = () => {
+    const props = useSelector((state:any) => state.town.value);
     
     let imgURL = '';
-    if(props.icon !== '---'){
-         imgURL = `http://openweathermap.org/img/wn/${props.icon}@2x.png`;
+    if (props.icon !== '---') {
+        imgURL = `http://openweathermap.org/img/wn/${props.icon}@2x.png`;
     }
-    
+
 
     return (
         <section className={styles['data-container']}>
