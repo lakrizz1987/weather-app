@@ -39,23 +39,7 @@ img {
     padding: 3rem 0 3rem 0;
 }
 
-.box{
-    width: 6rem;
-    height: 6rem;
-    box-shadow: 2px 7px 13px 0px rgba(0,0,0,0.75);
-    border-radius: 20%;
-}
 
-i{
-    font-size: 2rem;
-    margin-top: 0.6rem;
-}
-
-p{
-    margin-top: .8rem;
-    font-size: 1rem;
-    font-weight: bold;
-}
 
 @media(max-width:900px){
     .data-container{

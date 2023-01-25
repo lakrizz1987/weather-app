@@ -1,41 +1,29 @@
 import React from "react";
 import styles from "./Home.module.css";
-import { useSelector} from 'react-redux';
-
+import { useSelector } from 'react-redux';
+import Indicators from "../UI/Indicator";
 
 
 
 
 const Home: React.FC = () => {
-    const props = useSelector((state:any) => state.town.value);
-    
+    const currentTown = useSelector((state: any) => state.town.value);
+
     let imgURL = '';
-    if (props.icon !== '---') {
-        imgURL = `http://openweathermap.org/img/wn/${props.icon}@2x.png`;
+    if (currentTown.icon !== '---') {
+        imgURL = `http://openweathermap.org/img/wn/${currentTown.icon}@2x.png`;
     }
 
 
     return (
         <section className={styles['data-container']}>
-
             <div className={styles['temp-container']}>
-                <h3 className="town-name">{props.town}</h3>
+                <h3 className="town-name">{currentTown.town}</h3>
                 <img className="weather-icon" src={imgURL} alt="icon" />
             </div>
-            <h2 className="town-temp">{props.temp}°C</h2>
+            <h2 className="town-temp">{currentTown.temp}°C</h2>
             <div className={styles.stats}>
-                <div className={styles.box}>
-                    <i className="fa-solid fa-wind"></i>
-                    <p>{props.wind} m/s</p>
-                </div>
-                <div className={styles.box}>
-                    <i className="fa-solid fa-temperature-arrow-up"></i>
-                    <p>{props.maxTemp} C</p>
-                </div>
-                <div className={styles.box}>
-                    <i className="fa-solid fa-temperature-arrow-down"></i>
-                    <p>{props.minTemp} C</p>
-                </div>
+                {currentTown.items.map((item: {}) => <Indicators key={Math.random().toString()} data={Object.entries(item)} />)}
             </div>
         </section>
     )

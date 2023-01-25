@@ -7,9 +7,12 @@ export const townSlice = createSlice({
             town: '---',
             temp: '---',
             icon: '---',
-            maxTemp: '---',
-            minTemp: '---',
-            wind: '---'
+            items:[{maxTemp: '---'},
+            {minTemp: '---'},
+            {wind: '---'},
+            {seaLevel:'---'}
+        ]
+            
         },
     },
     reducers: {

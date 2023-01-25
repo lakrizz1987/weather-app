@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Routes, Route } from 'react-router-dom'
+import React, { useEffect} from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
@@ -24,9 +24,13 @@ function App() {
             town: data.name,
             temp: Math.round(data.main.temp).toString(),
             icon: data.weather[0].icon,
-            maxTemp: Math.round(data.main.temp_max).toString(),
-            minTemp: Math.round(data.main.temp_min).toString(),
-            wind: data.wind.speed
+            items:[{maxTemp: Math.round(data.main.temp_max).toString()},
+              {minTemp: Math.round(data.main.temp_min).toString()},
+              {wind: data.wind.speed.toString()},
+              {seaLevel: data.main.sea_level.toString()},
+            
+            ]
+            
           }
           dispatch(setTown(currentTown));
         })
