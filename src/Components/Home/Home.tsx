@@ -14,7 +14,7 @@ const Home: React.FC = () => {
         imgURL = `http://openweathermap.org/img/wn/${currentTown.icon}@2x.png`;
     }
 
-
+    //let myStyle = styles['data-container'] + ' ' + styles['rain']
     return (
         <section className={styles['data-container']}>
             <div className={styles['temp-container']}>
