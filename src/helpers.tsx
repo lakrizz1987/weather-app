@@ -7,7 +7,7 @@ interface Town {
 
 
 export function townConstuctor(data: Town) {
-    console.log(data)
+   
     let currentTown = {
         town: data.name,
         temp: Math.round(data.main.temp).toString(),

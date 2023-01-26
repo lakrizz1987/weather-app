@@ -12,11 +12,16 @@ const Header: React.FC = () => {
         event.preventDefault();
         
         let { town } = Object.fromEntries(new FormData(event.currentTarget));
-        event.currentTarget.reset();
+        if(town === ''){
+            console.log('empty')
+        }else{
+            event.currentTarget.reset();
 
-        const searchedTown = await api.getCurrentWeatherByName(town.toString());
-
-        dispatch(setTown(townConstuctor(searchedTown)));
+            const searchedTown = await api.getCurrentWeatherByName(town.toString());
+    
+            dispatch(setTown(townConstuctor(searchedTown)));
+        }
+        
         
     }
 
