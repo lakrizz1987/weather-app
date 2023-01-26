@@ -1,8 +1,12 @@
 import React from "react";
+import {useDispatch} from 'react-redux';
 import styles from "./Header.module.css";
-import api from "../../services/services"
+import api from "../../services/services";
+import {townConstuctor} from '../../helpers';
+import { setTown } from "../../store/townSlice";
 
 const Header: React.FC = () => {
+    const dispatch = useDispatch();
 
     async function submitHadler(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -11,7 +15,8 @@ const Header: React.FC = () => {
         event.currentTarget.reset();
 
         const searchedTown = await api.getCurrentWeatherByName(town.toString());
-        console.log(searchedTown)
+
+        dispatch(setTown(townConstuctor(searchedTown)));
         
     }
 

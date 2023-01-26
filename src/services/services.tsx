@@ -1,15 +1,18 @@
-
 const baseURL = 'https://api.openweathermap.org/data/2.5';
 const apiKey = 'd5a876fbd3439597f908bd3b1cd6fbec';
 
 const getCurrentWeatherByLat = async (lat: number, lon: number) => {
+    const latString = lat.toString();
+    const lonString = lon.toString();
+
     try {
-        const respons = await fetch(`${baseURL}/weather?lat=${lat.toString()}&lon=${lon.toString()}&appid=${apiKey}&units=metric`);
+        const respons = await fetch(`${baseURL}/weather?lat=${latString}&lon=${lonString}&appid=${apiKey}&units=metric`);
 
         if (!respons.ok) {
             const resultErr = await respons.json();
             throw new Error(resultErr.message)
         };
+        
         const result = await respons.json();
         return result;
 
