@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
-import getCurrentWeatherByLat from './services/services';
+import service from './services/services';
 import { useDispatch } from 'react-redux';
 import { setTown } from './store/townSlice';
 
@@ -18,7 +18,7 @@ function App() {
     navigator.geolocation.getCurrentPosition(position => {
       lat = position.coords.latitude;
       lon = position.coords.longitude;
-      getCurrentWeatherByLat(lat, lon)
+      service.getCurrentWeatherByLat(lat, lon)
         .then(data => {
           let currentTown = {
             town: data.name,

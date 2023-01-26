@@ -1,14 +1,18 @@
 import React from "react";
 import styles from "./Header.module.css";
-
+import service from "../../services/services"
 
 const Header: React.FC = () => {
 
-    function submitHadler(event: React.FormEvent<HTMLFormElement>) {
+    async function submitHadler(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
         
         let { town } = Object.fromEntries(new FormData(event.currentTarget));
         event.currentTarget.reset();
+
+        const searchedTown = await service.getCurrentWeatherByName(town.toString());
+        console.log(searchedTown)
+        
     }
 
     return (
