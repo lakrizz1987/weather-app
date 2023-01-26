@@ -1,12 +1,12 @@
-import React, { useEffect} from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+
 import './App.css';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
-import service from './services/services';
+import api from './services/services';
 import { useDispatch } from 'react-redux';
 import { setTown } from './store/townSlice';
-
+import { townConstuctor } from "./helpers"
 
 function App() {
   const dispatch = useDispatch();
@@ -18,20 +18,10 @@ function App() {
     navigator.geolocation.getCurrentPosition(position => {
       lat = position.coords.latitude;
       lon = position.coords.longitude;
-      service.getCurrentWeatherByLat(lat, lon)
+
+      api.getCurrentWeatherByLat(lat, lon)
         .then(data => {
-          let currentTown = {
-            town: data.name,
-            temp: Math.round(data.main.temp).toString(),
-            icon: data.weather[0].icon,
-            items:[{maxTemp: Math.round(data.main.temp_max).toString()},
-              {minTemp: Math.round(data.main.temp_min).toString()},
-              {wind: data.wind.speed.toString()},
-              {seaLevel: data.main.sea_level.toString()},
-            
-            ]
-            
-          }
+          let currentTown = townConstuctor(data)
           dispatch(setTown(currentTown));
         })
         .catch(err => console.log(err))

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Header.module.css";
-import service from "../../services/services"
+import api from "../../services/services"
 
 const Header: React.FC = () => {
 
@@ -10,7 +10,7 @@ const Header: React.FC = () => {
         let { town } = Object.fromEntries(new FormData(event.currentTarget));
         event.currentTarget.reset();
 
-        const searchedTown = await service.getCurrentWeatherByName(town.toString());
+        const searchedTown = await api.getCurrentWeatherByName(town.toString());
         console.log(searchedTown)
         
     }

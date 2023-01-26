@@ -1,11 +1,10 @@
 
-import React from "react";
-
+const baseURL = 'https://api.openweathermap.org/data/2.5';
 const apiKey = 'd5a876fbd3439597f908bd3b1cd6fbec';
 
 const getCurrentWeatherByLat = async (lat: number, lon: number) => {
     try {
-        const respons = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat.toString()}&lon=${lon.toString()}&appid=${apiKey}&units=metric`);
+        const respons = await fetch(`${baseURL}/weather?lat=${lat.toString()}&lon=${lon.toString()}&appid=${apiKey}&units=metric`);
 
         if (!respons.ok) {
             const resultErr = await respons.json();
@@ -21,7 +20,7 @@ const getCurrentWeatherByLat = async (lat: number, lon: number) => {
 
 const getCurrentWeatherByName = async (town: string) => {
     try {
-        const respons = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${town}&appid=${apiKey}&units=metric`);
+        const respons = await fetch(`${baseURL}/weather?q=${town}&appid=${apiKey}&units=metric`);
 
         if (!respons.ok) {
             const resultErr = await respons.json();
@@ -35,9 +34,9 @@ const getCurrentWeatherByName = async (town: string) => {
     }
 }
 
-const service = {
+const api = {
     getCurrentWeatherByLat,
     getCurrentWeatherByName
 }
 
-export default service;
+export default api;
