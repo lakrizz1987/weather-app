@@ -18,7 +18,7 @@ const Home: React.FC<Props> = ({ isLoading }) => {
     }
     
 
-    //let myStyle = styles['data-container'] + ' ' + styles['rain']
+   // let myStyle = styles['data-container'] + ' ' + styles['rain']
     return (
         <section className={styles['data-container']}>
             <div className={styles['temp-container']}>

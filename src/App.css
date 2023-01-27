@@ -14,3 +14,11 @@ body{
     --textColor: rgb(53, 52, 52);
 }
 
+.App{
+    height: 100vh;
+    background-image: url("../public/images/clouds-ex.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
