@@ -6,11 +6,12 @@
     height: 5rem;
     align-items: center;
     padding: 1rem 3rem;
-
     border-bottom-width: 4px;
     border-bottom-style: solid;
     border-image: var(--gradientColor) 1;
 }
+
+
 
 .searchInput{
     padding: 0.4rem 1rem;
@@ -30,6 +31,24 @@
 .searchBtn:hover{
     transform: scale(1.2);
     background: var(--gradientColor);
+}
+
+.errMsg{
+    margin: 0;
+    font-size: 12px;
+    position: absolute;
+    background: white;
+    bottom: 300px;
+    right: 158px;
+    color: red;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+    z-index: -10;
+}
+
+.errMsgShow{
+    opacity: 1;
+    z-index: 1;
 }
 
 @media(max-width:600px) {
