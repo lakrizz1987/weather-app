@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './App.css';
 import Header from './Components/Header/Header';
@@ -10,6 +10,7 @@ import { townConstuctor } from "./helpers"
 
 function App() {
   const dispatch = useDispatch();
+  const [isLoading,setIsLoading] = useState(true);
 
   useEffect(() => {
     let lat: number;
@@ -23,6 +24,7 @@ function App() {
         .then(data => {
           let currentTown = townConstuctor(data)
           dispatch(setTown(currentTown));
+          setIsLoading(false)
         })
         .catch(err => console.log(err))
     });
@@ -32,7 +34,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Home />
+      <Home isLoading={isLoading}/>
     </div>
   );
 }

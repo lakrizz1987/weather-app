@@ -1,10 +1,14 @@
 .data-container {
+    min-height: 480px;
     width: 90%;
     text-align: center;
     margin: 1.5rem auto;
     box-shadow: 2px 7px 33px 0px rgba(0, 0, 0, 0.75);
     border-radius: 10px 10px 10px 10px;
+    position: relative;
 }
+
+
 
 .rain{
     background-image: url("../../../public/giphy.gif");
