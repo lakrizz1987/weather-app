@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import './App.css';
 import Header from './Components/Header/Header';
@@ -7,10 +8,13 @@ import api from './services/services';
 import { useDispatch } from 'react-redux';
 import { setTown } from './store/townSlice';
 import { townConstuctor } from "./helpers"
+import {setAppClassName} from './helpers'
+
 
 function App() {
   const dispatch = useDispatch();
   const [isLoading,setIsLoading] = useState(true);
+  const currentTown = useSelector((state: any) => state.town.value);
 
   useEffect(() => {
     let lat: number;
@@ -31,8 +35,10 @@ function App() {
 
   }, [dispatch])
 
+  const classApp = setAppClassName(currentTown.icon);
+  
   return (
-    <div className="App">
+    <div className={classApp}>
       <Header />
       <Home isLoading={isLoading}/>
     </div>

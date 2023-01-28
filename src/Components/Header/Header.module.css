@@ -6,9 +6,9 @@
     height: 5rem;
     align-items: center;
     padding: 1rem 3rem;
-    border-bottom-width: 4px;
+    /*border-bottom-width: 4px;
     border-bottom-style: solid;
-    border-image: var(--gradientColor) 1;
+    border-image: var(--gradientColor) 1;*/
 }
 
 
@@ -19,6 +19,11 @@
     border: 1px solid black;
     border-radius: 3rem;
     transition: border 0.5s ease-in;
+    border: none;
+    box-shadow: 2px 7px 13px 0px rgb(0 0 0 / 75%);
+}
+.searchInput:focus{
+    outline: none;
 }
 
 .searchBtn{
@@ -27,6 +32,7 @@
     border: 1px solid black;
     cursor: pointer;
     transition: transform .2s ease-in;
+    box-shadow: 2px 7px 13px 0px rgb(0 0 0 / 75%);
 }
 
 .searchBtn:hover{

@@ -9,16 +9,51 @@ body{
 }
 
 :root{
-    --gradientColor: linear-gradient(to right, rgb(17, 17, 211), rgb(47, 223, 223));
-    --gradientColorLight: linear-gradient(to right, rgb(62, 143, 235), rgb(47, 223, 223));
-    --textColor: rgb(53, 52, 52);
+    --gradientColor: linear-gradient(to right, rgb(31, 31, 32), rgb(125, 126, 126));
+    --gradientColorLight: linear-gradient(to right, rgb(104, 105, 106), rgb(23, 23, 23));
+    --textColor: rgb(24, 23, 23);
 }
 
 .App{
     height: 100vh;
-    background-image: url("../public/images/clouds-ex.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
+
+.rain{
+    background-image: url('../public/pictures/rain.jpg');
+    background-position: top;
+}
+
+.snow{
+    background-image: url('../public/pictures/snow3.jpg');
+}
+
+.fog{
+    background-image: url('../public/pictures/fog.jpg');
+}
+
+.sun{
+    background-image: url('../public/pictures/sun.jpg');
+}
+
+.clouds{
+    background-image: url('../public/pictures/clouds2.jpg');
+}
+
+.cloudsEx{
+    background-image: url('../public/pictures/cloudsEx4.jpg');
+}
+
+.storm{
+    background-image: url('../public/pictures/storm4.jpg');
+    color: white;
+}
+
+.night{
+    background-image: url('../public/pictures/moon2.jpg');
+    color: white;
+}
+
 

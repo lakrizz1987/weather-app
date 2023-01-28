@@ -3,42 +3,33 @@
     width: 90%;
     text-align: center;
     margin: 1.5rem auto;
-    box-shadow: 2px 7px 33px 0px rgba(0, 0, 0, 0.75);
     border-radius: 10px 10px 10px 10px;
     position: relative;
 }
 
 
 
-.rain{
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-}
-
 .temp-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
-    background: var(--gradientColorLight);
-    border-radius: 10px 10px 0px 0px;
+    gap: 1rem;
     color: inherit;
 }
 
 .temp-container h3 {
     font-size: 3rem;
-    color: var(--textColor);
+    color: inherit;
+    
 }
 
 h2 {
     font-size: 6rem;
-    
 }
 
 img {
-    width: 8rem;
+    width: 7rem;
+    
 }
 
 .stats {
