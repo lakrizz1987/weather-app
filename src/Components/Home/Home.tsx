@@ -1,4 +1,4 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import styles from "./Home.module.css";
 import { useDispatch, useSelector } from 'react-redux';
 import Indicators from "../UI/Indicator";
@@ -34,27 +34,25 @@ const Home: React.FC<Props> = ({ isDataLoaded, setIsLoaded }) => {
                 api.getCurrentWeatherByLat(lat, lon)
                     .then(data => {
                         let currentTown = townConstuctor(data)
-                        dispatch(setTown({ ...currentTown}));
+                        dispatch(setTown({ ...currentTown }));
                         setIsLoaded(true)
                     })
                     .catch(err => console.log(err))
             });
         }
-    }, [dispatch, param.name,setIsLoaded])
+    }, [dispatch, param.name, setIsLoaded])
 
 
 
-    let imgURL = '';
-    if (currentTown.icon !== '---') {
-        imgURL = `http://openweathermap.org/img/wn/${currentTown.icon}@2x.png`;
-    }
+    let imgURL = `http://openweathermap.org/img/wn/${currentTown.icon}@2x.png`;
+
 
 
     return (
         <section className={styles['data-container']}>
             <div className={styles['temp-container']}>
                 <h3 className="town-name">{currentTown.town}</h3>
-                {isDataLoaded ? <img className="weather-icon" src={imgURL} alt="icon" /> : ''}
+                <img className="weather-icon" src={imgURL} alt="icon" />
             </div>
             <h2 className="town-temp">{isDataLoaded ? `${currentTown.temp} °C` : <Spinner />}</h2>
             <div className={styles.stats}>
