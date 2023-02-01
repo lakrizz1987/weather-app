@@ -11,9 +11,8 @@ export const townSlice = createSlice({
             {minTemp: '---'},
             {wind: '---'},
             {seaLevel:'---'}
-        ]
-            
-        },
+        ] }
+        
     },
     reducers: {
         setTown: (state, action) => {

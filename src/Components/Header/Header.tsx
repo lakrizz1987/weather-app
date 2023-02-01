@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { useDispatch } from 'react-redux';
+
 import styles from "./Header.module.css";
-import api from "../../services/services";
-import { townConstuctor } from '../../helpers';
-import { setTown } from "../../store/townSlice";
+
+import { useNavigate } from "react-router-dom";
 
 const Header: React.FC = () => {
-    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [isEmptySearchInput, setIsEmptySearchInput] = useState(false);
 
     async function submitHadler(event: React.FormEvent<HTMLFormElement>) {
@@ -18,9 +17,7 @@ const Header: React.FC = () => {
         } else {
             event.currentTarget.reset();
 
-            const searchedTown = await api.getCurrentWeatherByName(town.toString());
-
-            dispatch(setTown(townConstuctor(searchedTown)));
+            navigate(`/search/${town}`)
         }
     }
 
