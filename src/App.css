@@ -21,6 +21,14 @@ body{
     background-position: center;
 }
 
+@media(max-width:900px) {
+    .App {
+        height: 100vh;
+        
+        
+    }
+}
+
 .rain{
     background-image: url('../public/pictures/rain.jpg');
     background-position: top;

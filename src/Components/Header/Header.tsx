@@ -16,7 +16,6 @@ const Header: React.FC = () => {
             setIsEmptySearchInput(true)
         } else {
             event.currentTarget.reset();
-
             navigate(`/search/${town}`)
         }
     }
