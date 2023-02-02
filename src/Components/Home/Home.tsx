@@ -38,6 +38,17 @@ const Home: React.FC<Props> = ({ isDataLoaded, setIsLoaded }) => {
                         setIsLoaded(true)
                     })
                     .catch(err => console.log(err))
+            }, err => {
+                lon = 23.3242;
+                lat = 42.6975;
+
+                api.getCurrentWeatherByLat(lat, lon)
+                    .then(data => {
+                        let currentTown = townConstuctor(data)
+                        dispatch(setTown({ ...currentTown }));
+                        setIsLoaded(true)
+                    })
+                    .catch(err => console.log(err))
             });
         }
     }, [dispatch, param.name, setIsLoaded])
