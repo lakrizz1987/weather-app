@@ -27,7 +27,7 @@ const Header: React.FC = () => {
         styleWarningInput = styles.searchInput + ' ' + styles.errInput;
     }
 
-
+ 
     return (
         <header className={styles['site-header']}>
             <h1>WeatherApp</h1>
