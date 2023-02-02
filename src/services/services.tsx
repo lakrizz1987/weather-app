@@ -30,7 +30,6 @@ const getCurrentWeatherByName = async (town: string) => {
             throw new Error(resultErr.message)
         };
         const result = await respons.json();
-        console.log(result)
         return result;
 
     } catch (error: any) {
