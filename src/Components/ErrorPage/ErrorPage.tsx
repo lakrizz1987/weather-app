@@ -1,9 +1,14 @@
 import { Link, useLocation } from "react-router-dom";
 import styles from './ErrorPage.module.css';
 
-const ErrorPage = () =>{
+const ErrorPage = () => {
     const location = useLocation();
-    const err = location.state.message;
+    let err = 'Not Found!'
+
+    if (location.state != null) {
+        err = location.state.message;
+    }
+
 
     return (
         <section className={styles.errContainer}>
