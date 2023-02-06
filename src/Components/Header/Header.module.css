@@ -11,7 +11,10 @@
     border-image: var(--gradientColor) 1;*/
 }
 
-
+.title{
+    text-decoration: none;
+    color: inherit;
+}
 
 .searchInput{
     padding: 0.4rem 1rem;

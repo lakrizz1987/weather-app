@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import styles from "./Header.module.css";
 
@@ -29,7 +29,7 @@ const Header: React.FC = () => {
  
     return (
         <header className={styles['site-header']}>
-            <h1>WeatherApp</h1>
+           <Link className={styles.title} to={'/'}><h1>WeatherApp</h1></Link> 
             <section className="site-search-container">
                 <form onSubmit={submitHadler} method="post">
                 <span className={styleWarningSpan}>&#10007;</span>
