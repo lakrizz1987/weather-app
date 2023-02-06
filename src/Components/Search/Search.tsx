@@ -23,7 +23,7 @@ const Search: React.FC = () => {
             .catch(err => {
                 navigate('/404', { state: { message: err.message } })
             })
-    }, [params.name, dispatch]);
+    }, [params.name, dispatch,navigate]);
 
     return <Home isDataLoaded={loading} />
 }

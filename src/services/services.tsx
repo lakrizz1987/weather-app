@@ -17,7 +17,7 @@ const getCurrentWeatherByLat = async (lat: number, lon: number) => {
         return result;
 
     } catch (error: any) {
-        console.log(error.message)
+        throw error;
     }
 };
 
@@ -33,7 +33,7 @@ const getCurrentWeatherByName = async (town: string) => {
         return result;
 
     } catch (error: any) {
-        throw { message: error.message}
+        throw error;
     }
 }
 

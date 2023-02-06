@@ -6,7 +6,7 @@ import Spinner from "../Spinner/Spinner";
 import api from "../../services/services";
 import { townConstuctor } from "../../helpers";
 import { setTown } from '../../store/townSlice';
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 interface Props {
     isDataLoaded: boolean
@@ -18,7 +18,7 @@ const Home: React.FC<Props> = ({ isDataLoaded, setIsLoaded }) => {
     const currentTown = useSelector((state: any) => state.town.value);
     const param = useParams();
     const dispatch = useDispatch();
-
+    const navigate = useNavigate();
 
 
     useEffect(() => {
@@ -37,7 +37,9 @@ const Home: React.FC<Props> = ({ isDataLoaded, setIsLoaded }) => {
                         dispatch(setTown({ ...currentTown }));
                         setIsLoaded(true)
                     })
-                    .catch(err => console.log(err))
+                    .catch(err => {
+                        navigate('/404', { state: { message: err.message } })
+                    })
             }, err => {
                 lon = 23.3242;
                 lat = 42.6975;
@@ -48,10 +50,12 @@ const Home: React.FC<Props> = ({ isDataLoaded, setIsLoaded }) => {
                         dispatch(setTown({ ...currentTown }));
                         setIsLoaded(true)
                     })
-                    .catch(err => console.log(err))
+                    .catch(err => {
+                        navigate('/404', { state: { message: err.message } })
+                    })
             });
         }
-    }, [dispatch, param.name, setIsLoaded])
+    }, [dispatch, param.name, setIsLoaded,navigate])
 
 
 
