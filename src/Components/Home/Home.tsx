@@ -1,12 +1,16 @@
 import React, { useEffect } from "react";
-import styles from "./Home.module.css";
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useParams } from "react-router-dom";
+
+import { setTown } from '../../store/townSlice';
+
 import Indicators from "../UI/Indicator";
 import Spinner from "../Spinner/Spinner";
+
 import api from "../../services/services";
 import { townConstuctor } from "../../helpers";
-import { setTown } from '../../store/townSlice';
-import { useNavigate, useParams } from "react-router-dom";
+
+import styles from "./Home.module.css";
 
 interface Props {
     isDataLoaded: boolean

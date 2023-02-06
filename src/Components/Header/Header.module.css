@@ -22,6 +22,7 @@
     border: none;
     box-shadow: 2px 7px 13px 0px rgb(0 0 0 / 75%);
 }
+
 .searchInput:focus{
     outline: none;
 }
@@ -55,7 +56,7 @@
 }
 
 .errInput{
-    border-color: red;
+    outline: 2px solid red;
 }
 
 @media(max-width:600px) {

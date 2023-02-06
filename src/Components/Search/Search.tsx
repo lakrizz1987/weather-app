@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
+
+import Home from "../Home/Home";
+
+import { setTown } from "../../store/townSlice";
+
 import { townConstuctor } from "../../helpers";
 import api from "../../services/services";
-import Home from "../Home/Home";
-import { setTown } from "../../store/townSlice";
 
 const Search: React.FC = () => {
     const dispatch = useDispatch();
@@ -14,7 +17,7 @@ const Search: React.FC = () => {
 
     useEffect(() => {
         setLoading(false)
-        api.getCurrentWeatherByName(params.name!)
+        api.getCurrentWeatherByName(params.name?.trim()!)
             .then(town => {
                 const newData = townConstuctor(town)
                 dispatch(setTown({ ...newData }));
@@ -23,7 +26,7 @@ const Search: React.FC = () => {
             .catch(err => {
                 navigate('/404', { state: { message: err.message } })
             })
-    }, [params.name, dispatch,navigate]);
+    }, [params.name, dispatch, navigate]);
 
     return <Home isDataLoaded={loading} />
 }

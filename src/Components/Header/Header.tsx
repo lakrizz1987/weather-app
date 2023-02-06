@@ -1,8 +1,7 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import styles from "./Header.module.css";
-
-import { useNavigate } from "react-router-dom";
 
 const Header: React.FC = () => {
     const navigate = useNavigate();
@@ -16,7 +15,7 @@ const Header: React.FC = () => {
             setIsEmptySearchInput(true)
         } else {
             event.currentTarget.reset();
-            navigate(`/search/${town}`)
+            navigate(`/search/${town}`);
         }
     }
 

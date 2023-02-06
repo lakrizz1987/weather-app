@@ -2,8 +2,8 @@ interface Town {
     name: string;
     main: { temp: number, temp_max: number, temp_min: number, feels_like: number };
     weather: [{ icon: string }];
-    wind: { speed: number }
-}
+    wind: { speed: number };
+};
 
 
 export function townConstuctor(data: Town) {
@@ -18,29 +18,30 @@ export function townConstuctor(data: Town) {
         { feels: Math.round(data.main.feels_like) },]
     }
 
-    return currentTown
-}
+    return currentTown;
+};
 
 
 export function setAppClassName(icon: string) {
     let classAtr;
+
     if (icon === '01d') {
-        classAtr = 'sun'
+        classAtr = 'sun';
     } else if (icon === '02d') {
-        classAtr = 'cloudsEx'
+        classAtr = 'cloudsEx';
     } else if (icon === '03d' || icon === '04d') {
-        classAtr = 'clouds'
+        classAtr = 'clouds';
     } else if (icon === '09d' || icon === '10d') {
-        classAtr = 'rain'
+        classAtr = 'rain';
     } else if (icon === '11d') {
-        classAtr = 'storm'
+        classAtr = 'storm';
     } else if (icon === '13d') {
-        classAtr = 'snow'
+        classAtr = 'snow';
     } else if (icon === '50d') {
-        classAtr = 'fog'
+        classAtr = 'fog';
     } else {
-        classAtr = 'night'
+        classAtr = 'night';
     }
 
     return `App ${classAtr}`;
-}
+};
