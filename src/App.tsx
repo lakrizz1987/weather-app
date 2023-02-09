@@ -21,7 +21,7 @@ function App() {
     <div className={classApp}>
       <Header />
       <Routes>
-        <Route index element={<Home isDataLoaded={isDataLoaded} setIsLoaded={setIsLoaded} />}/>
+        <Route path='/' element={<Home isDataLoaded={isDataLoaded} setIsLoaded={setIsLoaded} />}/>
         <Route path='search/:name' element={<Search/>}/>
         <Route path='404' element={<ErrorPage/>}/>
         <Route path='*' element={<ErrorPage/>}/>
