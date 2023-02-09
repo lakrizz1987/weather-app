@@ -7,7 +7,7 @@ import Home from './Components/Home/Home';
 
 
 import {setAppClassName} from './helpers'
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import Search from './Components/Search/Search';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
 
@@ -22,6 +22,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home isDataLoaded={isDataLoaded} setIsLoaded={setIsLoaded} />}/>
+        <Route path='/weather-app' element={<Navigate to={'/'}/>}/>
         <Route path='search/:name' element={<Search/>}/>
         <Route path='404' element={<ErrorPage/>}/>
         <Route path='*' element={<ErrorPage/>}/>
