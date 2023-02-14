@@ -30,8 +30,9 @@ https://lakrizz1987.github.io/weather-app/
 
 Desktop:
 
-
+![Screenshot1](https://user-images.githubusercontent.com/99616791/218719252-857cbf2a-7570-430a-a103-f040acbbfa51.png)
 
 Mobile:
 
+![Screenshot2](https://user-images.githubusercontent.com/99616791/218719282-50f4e076-8713-46d4-a635-c214c3fa147c.png)
 
