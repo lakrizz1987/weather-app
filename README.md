@@ -2,6 +2,7 @@
 
 Weather App is an app where you can check the weather on all over the world. I am used free OpenWeather Api to fetch data.
 Тhe application has the ability to find the user's location if he or the browser allows it. I am used navigator.geolocation.
+The background is dynamic and depend from the weather condition.
 
 ## Live demo:
 
@@ -20,6 +21,7 @@ https://lakrizz1987.github.io/weather-app/
 ## Tech
 
   - <a href="https://reactjs.org/">React</a>
+  - <a href="https://www.typescriptlang.org/">TypeScript</a>
   - <a href="https://reactrouter.com/">React Router</a>
   - <a href="https://www.postman.com/">Postman</a>
   - <a href="https://openweathermap.org/api">OpenWeatherApi</a>
