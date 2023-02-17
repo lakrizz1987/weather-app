@@ -10,7 +10,8 @@ export class Town {
     icon: string;
     temp: string;
     town: string;
-    items: Object[];
+    items: Object[]; 
+    
     constructor(data:TownData) {
         this.town = data.name;
         this.temp= Math.round(data.main.temp).toString();
