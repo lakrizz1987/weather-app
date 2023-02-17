@@ -6,7 +6,7 @@ import Home from "../Home/Home";
 
 import { setTown } from "../../store/townSlice";
 
-import { townConstuctor } from "../../helpers";
+import { Town } from "../../helpers";
 import api from "../../services/services";
 
 const Search: React.FC = () => {
@@ -19,7 +19,7 @@ const Search: React.FC = () => {
         setLoading(false)
         api.getCurrentWeatherByName(params.name?.trim()!)
             .then(town => {
-                const newData = townConstuctor(town)
+                const newData = new Town(town)
                 dispatch(setTown({ ...newData }));
                 setLoading(true)
             })

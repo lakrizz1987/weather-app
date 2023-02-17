@@ -8,7 +8,7 @@ import Indicators from "../UI/Indicator";
 import Spinner from "../Spinner/Spinner";
 
 import api from "../../services/services";
-import { townConstuctor } from "../../helpers";
+import { Town } from "../../helpers";
 
 import styles from "./Home.module.css";
 
@@ -37,7 +37,7 @@ const Home: React.FC<Props> = ({ isDataLoaded, setIsLoaded }) => {
 
                 api.getCurrentWeatherByLat(lat, lon)
                     .then(data => {
-                        let currentTown = townConstuctor(data)
+                        let currentTown = new Town(data)
                         dispatch(setTown({ ...currentTown }));
                         setIsLoaded(true)
                     })
@@ -50,7 +50,7 @@ const Home: React.FC<Props> = ({ isDataLoaded, setIsLoaded }) => {
 
                 api.getCurrentWeatherByLat(lat, lon)
                     .then(data => {
-                        let currentTown = townConstuctor(data)
+                        let currentTown = new Town(data)
                         dispatch(setTown({ ...currentTown }));
                         setIsLoaded(true)
                     })

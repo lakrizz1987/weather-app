@@ -1,25 +1,27 @@
-interface Town {
+
+interface TownData {
     name: string;
     main: { temp: number, temp_max: number, temp_min: number, feels_like: number };
     weather: [{ icon: string }];
     wind: { speed: number };
 };
 
-
-export function townConstuctor(data: Town) {
-
-    let currentTown = {
-        town: data.name,
-        temp: Math.round(data.main.temp).toString(),
-        icon: data.weather[0].icon,
-        items: [{ maxTemp: Math.round(data.main.temp_max).toString() },
+export class Town {
+    icon: string;
+    temp: string;
+    town: string;
+    items: Object[];
+    constructor(data:TownData) {
+        this.town = data.name;
+        this.temp= Math.round(data.main.temp).toString();
+        this.icon= data.weather[0].icon;
+        this.items= [{ maxTemp: Math.round(data.main.temp_max).toString() },
         { minTemp: Math.round(data.main.temp_min).toString() },
         { wind: data.wind.speed.toString() },
-        { feels: Math.round(data.main.feels_like) },]
+        { feels: Math.round(data.main.feels_like) }];
     }
+}
 
-    return currentTown;
-};
 
 
 export function setAppClassName(icon: string) {
